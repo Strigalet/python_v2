@@ -3,9 +3,9 @@ from data import dataset
 
 #    Створити пакет validators та написати функції, що валідують усі дані. Імпорутвати дані функції.
 
-from validators.lib import ?
-?
-?
+from validators.lib import getStudent
+from validators.lib import getCompany
+from validators.lib import getSkill
 
 
 from task1 import addStudentSkill
@@ -15,15 +15,22 @@ from task1 import addStudentSkill
 #   Усі дані вводить користувач. Використати валідатори. Викликати функцію
 
 def addStudentSkillValidator():
-    #TODO
-    ? = getStudent()
 
+    student=getStudent()
+    if not student:
+        print("Print correct data:" )
+        student = getStudent()
 
-    ? = getCompany()
+    company=getCompany()
+    if not company:
+        print("Print correct data:" )
+        company = getCompany()
+    skill=getSkill()
+    if not skill:
+        print("Print correct data:" )
+        skill = getSkill()
 
-    ? = getSkill()
-
-    addStudentSkill(?, ?, ?)
+    addStudentSkill(student, company, skill)
 
 
 

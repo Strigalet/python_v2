@@ -9,8 +9,8 @@ import plotly.graph_objs as go
 
 data = ?
 
-diagram = ?
+diagram = go.Pie(lables=dataset.keys(),values=dataset.value())
 
-fig = ?
+fig = go.Figure(data=[diagram])
 
-plotly.offline.plot(?)
+plotly.offline.plot(fig,filename="pie.html")
