@@ -10,7 +10,7 @@ def getStudent():
 
     user_input = input("Print the name of student's ticket: ")
 
-    if (re.match(r"^[A-Z]{2}\-\d{8}$", user_input) ):
+    if (re.match(r"^[A-Z]{2}\-\d{8,8}$", user_input) ):
         return user_input
     else:
         return False
@@ -25,7 +25,7 @@ def getCompany():
 
     user_input = input("Print the name of complany: ")
 
-    if (re.match(r"^[a-z]+8\w{0,2}$", user_input)):
+    if (re.match(r"^[a-z]{1,8}\w{2,2}$", user_input)):
         return user_input
     else:
         return False

@@ -7,18 +7,21 @@ from task1 import *
 
 
 
-def recursionByCompany(student,b,counter):
+def recursionByCompany(student,company_list,counter=0):
+    if company_list == []:
+        return counter
 
-    if  company_list=[]
+    current_company_list = dataset[student][company_list[0]]
+    counter = counter + len(current_company_list)
 
-    return skills
+    return recursionByCompany(student, company_list[1:], counter)
 
 
 
 
 
 def recursionByStudents(k=list(dataset.keys()),b=dict()):
-    if k=[]:
+    if k==[]:
         return b
     else:
         student = k[0]
@@ -27,7 +30,7 @@ def recursionByStudents(k=list(dataset.keys()),b=dict()):
 
         b[student] = skill
 
-        return recursionByUsers(k[1:], b)
+        return recursionByStudents(k[1:], b)
 
 
 

@@ -7,15 +7,17 @@ import plotly.graph_objs as go
 
 #Вивести стовпчикову діаграму: хто скільки вмінь має.
 
-data = {}
-for student in dataset:
-    for keys,values in dataset.items():
+data = dict()
+for student in list(dataset.keys()):
+    for company, company_list in (dataset[student]).items():
         if student in data:
-            data[student] =l
+            data[student] += len(company_list)
         else:
-            data[student] = len(product_list)
+            data[student] = len(company_list)
 
-diagram = go.Bar(x=dataset.keys(),y=dataset.values())
+print(data)
+
+diagram = go.Bar(x=list(data.keys()),y=list(data.values()))
+
 fig = go.Figure(data=[diagram])
-
-plotly.offline.plot(fig,filename="bar.html")
+plotly.offline.plot(fig, filename='Bar.html')

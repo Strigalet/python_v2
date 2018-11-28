@@ -7,10 +7,15 @@ import plotly.graph_objs as go
 
 #Вивести кругову діаграму: яке вміння, скільки користувачів мають.
 
-data = ?
+data = dict()
+for student in list(dataset.keys()):
+    for company, company_list in (dataset[student]).items():
+        if company in data:
+            data[company] += len(company_list)
+        else:
+            data[company] = len(company_list)
+print(data)
 
-diagram = go.Pie(lables=dataset.keys(),values=dataset.value())
-
+diagram = go.Pie(labels=list(data.keys()), values=list(data.values()))
 fig = go.Figure(data=[diagram])
-
-plotly.offline.plot(fig,filename="pie.html")
+plotly.offline.plot(fig, filename='Pie.html')

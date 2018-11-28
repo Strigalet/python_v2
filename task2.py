@@ -17,16 +17,16 @@ from task1 import addStudentSkill
 def addStudentSkillValidator():
 
     student=getStudent()
-    if not student:
+    while not student:
         print("Print correct data:" )
         student = getStudent()
 
     company=getCompany()
-    if not company:
+    while not company:
         print("Print correct data:" )
         company = getCompany()
     skill=getSkill()
-    if not skill:
+    while not skill:
         print("Print correct data:" )
         skill = getSkill()
 
